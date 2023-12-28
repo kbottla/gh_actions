@@ -6,7 +6,7 @@ RUN ["apk", "--no-cache", "add", "ca-certificates", "python3", "build-base", "ba
 RUN wget https://github.com/sgerrand/alpine-pkg-glibc/releases/download/2.28-r0/glibc-2.28-r0.apk && apk add --force-overwrite --no-cache glibc-2.28-r0.apk && rm -f glibc-2.28-r0.apk
 ###
 
-WORKDIR /app
+WORKDIR /app 
 COPY package.json .
 COPY package-lock.json .
 RUN npm ci --quiet
