@@ -1,0 +1,11 @@
+name: Run tests
+
+on:
+  pull_request:
+
+jobs:
+  check_docker_file:
+    uses: kbottla/gh_actions/.github/workflows/_check_docker_sha_is_manifest.yaml@main
+    with:
+      file-path: Dockerfile
+    name: Check Dockerfile for valid manifest SHAs

@@ -22,9 +22,9 @@ jobs:
 
           for image_name in $image_names; do
             if docker manifest inspect "$image_name" > /dev/null 2>&1; then
-              echo "Image '$image_name' in Dockerfile is a valid manifest."
+              echo "Image '$image_name' in '${{ inputs.file-path }}' is a valid manifest."
             else
-              echo "Image '$image_name' in Dockerfile is not have a valid manifest."
+              echo "Image '$image_name' in '${{ inputs.file-path }}' is not have a valid manifest."
               exit 1
             fi
           done
