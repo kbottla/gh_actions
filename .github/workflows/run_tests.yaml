@@ -8,5 +8,4 @@ jobs:
     uses: kbottla/gh_actions/.github/workflows/_check_docker_sha_is_manifest.yaml@main
     with:
       file-path: Dockerfile
-    if: "contains(github.event.pull_request.changed_files, 'Dockerfile')"
     name: Check Dockerfile for valid manifest SHAs
